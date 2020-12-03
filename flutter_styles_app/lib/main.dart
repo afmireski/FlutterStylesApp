@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_styles_app/flutterStylesApp/home/homeScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,108 +11,84 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-        // This makes the visual density adapt to the platform that you run
-        // the app on. For desktop platforms, the controls will be smaller and
-        // closer together (more dense) than on mobile platforms.
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+        primarySwatch: MaterialColor(4294719747,{50: Color( 0xffffebe6 )
+          , 100: Color( 0xfffed7cd )
+          , 200: Color( 0xfffeb09a )
+          , 300: Color( 0xfffd8868 )
+          , 400: Color( 0xfffd6135 )
+          , 500: Color( 0xfffc3903 )
+          , 600: Color( 0xffca2e02 )
+          , 700: Color( 0xff972202 )
+          , 800: Color( 0xff651701 )
+          , 900: Color( 0xff320b01 )
+        }),
+        brightness: Brightness.light,
+        primaryColor: Color( 0xfffc3903 ),
+        primaryColorBrightness: Brightness.dark,
+        primaryColorLight: Color( 0xfffed7cd ),
+        primaryColorDark: Color( 0xff972202 ),
+        accentColor: Color( 0xfffc3903 ),
+        accentColorBrightness: Brightness.dark,
+        canvasColor: Color( 0xfffafafa ),
+        scaffoldBackgroundColor: Color( 0xfffafafa ),
+        bottomAppBarColor: Color( 0xffffffff ),
+        cardColor: Color( 0xffffffff ),
+        dividerColor: Color( 0x1f000000 ),
+        highlightColor: Color( 0x66bcbcbc ),
+        splashColor: Color( 0x66c8c8c8 ),
+        selectedRowColor: Color( 0xfff5f5f5 ),
+        unselectedWidgetColor: Color( 0x8a000000 ),
+        disabledColor: Color( 0x61000000 ),
+        buttonColor: Color( 0xffe0e0e0 ),
+        toggleableActiveColor: Color( 0xffca2e02 ),
+        secondaryHeaderColor: Color( 0xffffebe6 ),
+        textSelectionColor: Color( 0xfffeb09a ),
+        cursorColor: Color( 0xff4285f4 ),
+        textSelectionHandleColor: Color( 0xfffd8868 ),
+        backgroundColor: Color( 0xfffeb09a ),
+        dialogBackgroundColor: Color( 0xffffffff ),
+        indicatorColor: Color( 0xfffc3903 ),
+        hintColor: Color( 0x8a000000 ),
+        errorColor: Color( 0xffd32f2f ),
+        buttonTheme: ButtonThemeData(
+          textTheme: ButtonTextTheme.normal,
+          minWidth: 88,
+          height: 36,
+          padding: EdgeInsets.only(top:0,bottom:0,left:16, right:16),
+          shape:     RoundedRectangleBorder(
+            side: BorderSide(color: Color( 0xff000000 ), width: 0, style: BorderStyle.none, ),
+            borderRadius: BorderRadius.all(Radius.circular(4.0)),
+          )
+          ,
+          alignedDropdown: false ,
+          buttonColor: Color( 0xffff4d1c ),
+          disabledColor: Color( 0x61000000 ),
+          highlightColor: Color( 0x29000000 ),
+          splashColor: Color( 0x1f000000 ),
+          focusColor: Color( 0x1f000000 ),
+          hoverColor: Color( 0x0a000000 ),
+          colorScheme: ColorScheme(
+            primary: Color( 0xfffc3903 ),
+            primaryVariant: Color( 0xff972202 ),
+            secondary: Color( 0xfffc3903 ),
+            secondaryVariant: Color( 0xff972202 ),
+            surface: Color( 0xffffffff ),
+            background: Color( 0xfffeb09a ),
+            error: Color( 0xffd32f2f ),
+            onPrimary: Color( 0xffffffff ),
+            onSecondary: Color( 0xffffffff ),
+            onSurface: Color( 0xff000000 ),
+            onBackground: Color( 0xffffffff ),
+            onError: Color( 0xffffffff ),
+            brightness: Brightness.light,
+          ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      home: HomeScreen(),
     );
   }
 }
+
+
