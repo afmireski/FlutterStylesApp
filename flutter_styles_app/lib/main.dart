@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_styles_app/flutterStylesApp/home/homeScreen.dart';
+import 'package:flutter_styles_app/flutterStylesApp/home.dart';
+import 'package:flutter_styles_app/functions/appRotationController.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,6 +10,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    portraitModeOnly();
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
@@ -32,7 +34,7 @@ class MyApp extends StatelessWidget {
         accentColor: Color( 0xfffc3903 ),
         accentColorBrightness: Brightness.dark,
         canvasColor: Color( 0xfffafafa ),
-        scaffoldBackgroundColor: Color( 0xfffafafa ),
+        scaffoldBackgroundColor: Color( 0xfffeb09a ),
         bottomAppBarColor: Color( 0xffffffff ),
         cardColor: Color( 0xffffffff ),
         dividerColor: Color( 0x1f000000 ),
@@ -86,7 +88,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: HomeScreen(),
+      home: Home(),
     );
   }
 }
