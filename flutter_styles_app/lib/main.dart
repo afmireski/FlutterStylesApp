@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
         accentColor: Color( 0xfffc3903 ),
         accentColorBrightness: Brightness.dark,
         canvasColor: Color( 0xfffafafa ),
-        scaffoldBackgroundColor: Color( 0xfffeb09a ),
+        scaffoldBackgroundColor: Color( 0xfffed7cd ),
         bottomAppBarColor: Color( 0xffffffff ),
         cardColor: Color( 0xffffffff ),
         dividerColor: Color( 0x1f000000 ),
