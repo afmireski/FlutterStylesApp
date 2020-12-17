@@ -4,6 +4,8 @@ class BeveledRectangleDatePicker extends StatelessWidget {
 
   final String label;
   final TextStyle fieldStyle;
+  final String errotText;
+  final TextStyle errorStyle;
   final Color fieldColor;
   final Color borderColor;
   final List<BoxShadow> shadows;
@@ -13,6 +15,7 @@ class BeveledRectangleDatePicker extends StatelessWidget {
 
   const BeveledRectangleDatePicker({Key key,
     @required this.label, this.fieldStyle,
+    this.errotText, this.errorStyle,
     this.fieldColor = Colors.white,
     this.borderColor = Colors.black,
     this.shadows,
@@ -53,6 +56,8 @@ class BeveledRectangleDatePicker extends StatelessWidget {
               ),
               hintStyle: fieldStyle,
               hintText: label,
+              errorText: errotText,
+              errorStyle: errorStyle,
               border: InputBorder.none,
             )
         ),

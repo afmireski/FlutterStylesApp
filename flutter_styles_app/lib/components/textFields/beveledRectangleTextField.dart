@@ -4,6 +4,8 @@ import 'package:flutter/services.dart';
 class BeveledRectangleTextField extends StatelessWidget {
 
   final String label;
+  final String errorText;
+  final TextStyle errorStyle;
   final Color fieldColor;
   final Color borderColor;
   final List<BoxShadow> shadows;
@@ -14,9 +16,11 @@ class BeveledRectangleTextField extends StatelessWidget {
   final TextInputAction inputAction;
   final Function onSubmitted;
   final Function(String) onChanged;
+  final List<TextInputFormatter> masks;
 
   const BeveledRectangleTextField({Key key,
     this.label,
+    this.errorText, this.errorStyle,
     this.fieldColor = Colors.white,
     this.borderColor = Colors.black,
     this.shadows,
@@ -26,7 +30,7 @@ class BeveledRectangleTextField extends StatelessWidget {
     this.keyboardType = TextInputType.text,
     this.inputAction = TextInputAction.done,
     this.onSubmitted,
-    this.onChanged}) : super(key: key);
+    this.onChanged, this.masks}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -58,10 +62,13 @@ class BeveledRectangleTextField extends StatelessWidget {
         onSubmitted: onSubmitted,
         onChanged: onChanged,
         decoration: InputDecoration(
+          errorText: errorText,
+          errorStyle: errorStyle,
           hintText: label,
           hintStyle: fieldStyle,
           border: InputBorder.none,
-          )
+          ),
+        inputFormatters: masks,
         ),
     );
   }

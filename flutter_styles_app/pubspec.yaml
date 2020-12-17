@@ -29,7 +29,19 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.0
 
+  #MOB X
+  mobx: ^1.2.1+4
+  flutter_mobx: ^1.1.0+2
+
+  #INPUT
+  mask_text_input_formatter: ^1.1.0
+
+  #DATE
+  date_format: ^1.0.9
+
 dev_dependencies:
+  mobx_codegen: ^1.1.2
+  build_runner: ^1.10.9
   flutter_test:
     sdk: flutter
 
