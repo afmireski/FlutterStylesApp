@@ -19,7 +19,7 @@ class BeveledRectangleTextField extends StatelessWidget {
   final List<TextInputFormatter> masks;
 
   const BeveledRectangleTextField({Key key,
-    this.label,
+    @required this.label,
     this.errorText, this.errorStyle,
     this.fieldColor = Colors.white,
     this.borderColor = Colors.black,
@@ -58,7 +58,7 @@ class BeveledRectangleTextField extends StatelessWidget {
         controller: controller,
         focusNode: focus,
         keyboardType: keyboardType,
-        textInputAction: TextInputAction.done,
+        textInputAction: inputAction,
         onSubmitted: onSubmitted,
         onChanged: onChanged,
         decoration: InputDecoration(

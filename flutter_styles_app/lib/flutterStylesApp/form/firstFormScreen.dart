@@ -1,44 +1,18 @@
 import 'package:date_format/date_format.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:flutter_styles_app/components/textFields/beveleadRectangleDatePicker.dart';
-import 'package:flutter_styles_app/components/textFields/beveledRectangleTextField.dart';
+import 'package:flutter_styles_app/components/inputFields/beveleadRectangleDatePicker.dart';
+import 'package:flutter_styles_app/components/inputFields/beveledRectangleTextField.dart';
 import 'package:flutter_styles_app/flutterStylesApp/form/controllers/formController.dart';
+import 'package:flutter_styles_app/flutterStylesApp/form/secondFormScreen.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
-class FirstFormScreen extends StatefulWidget {
-  @override
-  _FirstFormScreenState createState() => _FirstFormScreenState();
-}
-
-class _FirstFormScreenState extends State<FirstFormScreen> {
+class FirstFormScreen extends StatelessWidget {
   final FormController formController = FormController();
 
   final cpfMask = MaskTextInputFormatter(mask: '###.###.###-##');
 
   TextEditingController dateController = TextEditingController();
-
-  // ReactionDisposer dataReaction;
-
-  @override
-  void initState() {
-    super.initState();
-
-    // dataReaction = reaction<DateTime>((_) => formController.firstForm.dataNascimento,
-    //         (date) {
-    //           print(date);
-    //           if (date != null) {
-    //             dateController.text = formatDate(date, [dd, '/', mm, '/', yyyy]);
-    //             print(dateController.text);
-    //           }
-    // });
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    // dataReaction.reaction.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -133,7 +107,7 @@ class _FirstFormScreenState extends State<FirstFormScreen> {
                             blurRadius: 2.0),
                       ],
                       keyboardType:
-                          TextInputType.numberWithOptions(decimal: false),
+                      TextInputType.numberWithOptions(decimal: false),
                       masks: [cpfMask],
                     );
                   },
@@ -182,7 +156,13 @@ class _FirstFormScreenState extends State<FirstFormScreen> {
                     builder: (context) {
                       return RaisedButton.icon(
                         onPressed:
-                            formController.firstFormIsValid ? () {} : null,
+                        !formController.firstFormIsValid ? () {
+                          Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => SecondFormScreen(formController: formController,),
+                              ),
+                          );
+                        } : null,
                         shape: BeveledRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0),
                             side: BorderSide(
@@ -213,3 +193,4 @@ class _FirstFormScreenState extends State<FirstFormScreen> {
     );
   }
 }
+

@@ -106,6 +106,17 @@ mixin _$FirstForm on _FirstFormBase, Store {
   }
 
   @override
+  void changeDataNascimento(DateTime value) {
+    final _$actionInfo = _$_FirstFormBaseActionController.startAction(
+        name: '_FirstFormBase.changeDataNascimento');
+    try {
+      return super.changeDataNascimento(value);
+    } finally {
+      _$_FirstFormBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 nome: ${nome},
