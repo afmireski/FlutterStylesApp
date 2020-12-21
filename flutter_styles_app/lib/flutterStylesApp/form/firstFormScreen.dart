@@ -16,6 +16,7 @@ class FirstFormScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ///TODO: DECORAR O FORM
     return Container(
       child: ListView(
         physics: BouncingScrollPhysics(),
@@ -57,6 +58,8 @@ class FirstFormScreen extends StatelessWidget {
                             offset: Offset(4.0, 2.0),
                             blurRadius: 2.0)
                       ],
+                      inputAction: TextInputAction.next,
+                      keyboardType: TextInputType.name,
                     );
                   },
                 ),
@@ -82,6 +85,7 @@ class FirstFormScreen extends StatelessWidget {
                             blurRadius: 2.0)
                       ],
                       keyboardType: TextInputType.emailAddress,
+                      inputAction: TextInputAction.next,
                     );
                   },
                 ),
@@ -108,6 +112,7 @@ class FirstFormScreen extends StatelessWidget {
                       ],
                       keyboardType:
                       TextInputType.numberWithOptions(decimal: false),
+                      inputAction: TextInputAction.next,
                       masks: [cpfMask],
                     );
                   },
@@ -156,7 +161,7 @@ class FirstFormScreen extends StatelessWidget {
                     builder: (context) {
                       return RaisedButton.icon(
                         onPressed:
-                        !formController.firstFormIsValid ? () {
+                        formController.firstFormIsValid ? () {
                           Navigator.of(context).push(
                               MaterialPageRoute(
                                 builder: (context) => SecondFormScreen(formController: formController,),
