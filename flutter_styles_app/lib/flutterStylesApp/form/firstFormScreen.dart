@@ -1,14 +1,17 @@
 import 'package:date_format/date_format.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:flutter_styles_app/components/clippers/flagClipper.dart';
 import 'package:flutter_styles_app/components/inputFields/beveleadRectangleDatePicker.dart';
 import 'package:flutter_styles_app/components/inputFields/beveledRectangleTextField.dart';
+import 'package:flutter_styles_app/flutterStylesApp/form/controllers/bannerController.dart';
 import 'package:flutter_styles_app/flutterStylesApp/form/controllers/formController.dart';
 import 'package:flutter_styles_app/flutterStylesApp/form/secondFormScreen.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class FirstFormScreen extends StatelessWidget {
   final FormController formController = FormController();
+  final BannerController _bannerController = BannerController();
 
   final cpfMask = MaskTextInputFormatter(mask: '###.###.###-##');
 
@@ -22,10 +25,49 @@ class FirstFormScreen extends StatelessWidget {
         physics: BouncingScrollPhysics(),
         padding: EdgeInsets.symmetric(horizontal: 8.0),
         children: [
+          Observer(
+            builder: (context) {
+              if (_bannerController.show) {
+                return MaterialBanner(
+                  content: Text(
+                    'Informe abaixo seu nome, um e-mail válido, seu CPF, e data de nascimento.',
+                  ),
+                  contentTextStyle: TextStyle(color: Theme.of(context).accentColor),
+                  leading: CircleAvatar(child: Icon(Icons.info_outline_rounded, color: Colors.white),),
+                  backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+                  actions: [
+                    TextButton(
+                        onPressed: () {
+                          _bannerController.changeShow(false);
+                        },
+                        child: Text(
+                          'Entendi',
+                          style: TextStyle(color: Theme.of(context).primaryColorDark),))
+                  ],
+                  forceActionsBelow: true,
+                );
+              } else {
+                return Container();
+              }
+            }
+          ),
+          SizedBox(height: 10.0,),
+          Align(
+            alignment: Alignment.center,
+            child: ClipPath(
+              clipper: FlagClipper(),
+              child: Container(
+                color: Theme.of(context).primaryColor,
+                child: Center(child: Icon(Icons.assignment_outlined, color: Colors.white, size: 40.0,)),
+                padding: EdgeInsets.all(20.0),
+                width: 80,
+              ),
+            ),
+          ),
           Container(
             decoration: ShapeDecoration(
-              shape: ContinuousRectangleBorder(
-                  borderRadius: BorderRadius.circular(50.0)),
+              shape: BeveledRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0)),
               shadows: [
                 BoxShadow(
                     color: Colors.black,

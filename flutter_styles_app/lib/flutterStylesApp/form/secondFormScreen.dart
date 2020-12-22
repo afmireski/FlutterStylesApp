@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:flutter_styles_app/components/clippers/flagClipper.dart';
 import 'package:flutter_styles_app/components/inputFields/beveleadRectangleDropdown.dart';
 import 'package:flutter_styles_app/components/inputFields/beveledRectangleTextField.dart';
+import 'package:flutter_styles_app/flutterStylesApp/form/controllers/bannerController.dart';
 import 'package:flutter_styles_app/flutterStylesApp/form/controllers/formController.dart';
 import 'package:flutter_styles_app/flutterStylesApp/home.dart';
 
 class SecondFormScreen extends StatelessWidget {
 
   final FormController formController;
+  final BannerController _bannerController = BannerController();
 
   SecondFormScreen({Key key, @required this.formController}) : super(key: key);
 
@@ -19,17 +22,64 @@ class SecondFormScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Form'),
         centerTitle: true,
-        automaticallyImplyLeading: false
+        automaticallyImplyLeading: false,
+        actions: [
+          IconButton(
+              icon: Icon(Icons.info_outline_rounded, color: Colors.white),
+              tooltip: 'Mostrar dica',
+              onPressed: () {
+                _bannerController.changeShow(true);
+              }),
+        ],
       ),
       body: Container(
         child: ListView(
           physics: BouncingScrollPhysics(),
           padding: EdgeInsets.symmetric(horizontal: 8.0),
           children: [
+            Observer(
+                builder: (context) {
+                  if (_bannerController.show) {
+                    return MaterialBanner(
+                      content: Text(
+                        'Informe abaixo seu RG, o órgão emissor (Ex: SSP), e sua orientação sexual.',
+                      ),
+                      contentTextStyle: TextStyle(color: Theme.of(context).accentColor),
+                      leading: CircleAvatar(child: Icon(Icons.info_outline_rounded, color: Colors.white),),
+                      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+                      actions: [
+                        TextButton(
+                            onPressed: () {
+                              _bannerController.changeShow(false);
+                            },
+                            child: Text(
+                              'Entendi',
+                              style: TextStyle(color: Theme.of(context).primaryColorDark),))
+                      ],
+                      forceActionsBelow: true,
+                    );
+                  } else {
+                    return Container();
+                  }
+                }
+            ),
+            SizedBox(height: 10.0,),
+            Align(
+              alignment: Alignment.center,
+              child: ClipPath(
+                clipper: FlagClipper(),
+                child: Container(
+                  color: Theme.of(context).primaryColor,
+                  child: Center(child: Icon(Icons.assignment_outlined, color: Colors.white, size: 40.0,)),
+                  padding: EdgeInsets.all(20.0),
+                  width: 80,
+                ),
+              ),
+            ),
             Container(
               decoration: ShapeDecoration(
-                shape: ContinuousRectangleBorder(
-                    borderRadius: BorderRadius.circular(50.0)),
+                shape: BeveledRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0)),
                 shadows: [
                   BoxShadow(
                       color: Colors.black,
