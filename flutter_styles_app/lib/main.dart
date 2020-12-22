@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_styles_app/flutterStylesApp/auth/login.dart';
 import 'package:flutter_styles_app/flutterStylesApp/home.dart';
 import 'package:flutter_styles_app/functions/appRotationController.dart';
 
@@ -88,7 +89,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: Home(),
+      home: Login(),
     );
   }
 }
