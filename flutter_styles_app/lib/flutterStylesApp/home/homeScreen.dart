@@ -13,39 +13,48 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: Column(
-          children: [
-            WaveHeader(
-              height: 160,
-              mainColor: Theme.of(context).primaryColorDark,
-              secondaryColor: Theme.of(context).accentColor,
-              child: ListTile(
-                leading: CircleAvatar(
-                  backgroundColor: Theme.of(context).accentColor,
-                  radius: 40,
-                  child: Icon(
-                    Icons.person,
-                    color: Colors.white,
-                    size: 30,
+        child: FutureBuilder(
+          future: Future.delayed(Duration(seconds: 5)),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return Center(child: CircularProgressIndicator(),);
+            } else {
+              return Column(
+                children: [
+                  WaveHeader(
+                    height: 160,
+                    mainColor: Theme.of(context).primaryColorDark,
+                    secondaryColor: Theme.of(context).accentColor,
+                    child: ListTile(
+                      leading: CircleAvatar(
+                        backgroundColor: Theme.of(context).accentColor,
+                        radius: 40,
+                        child: Icon(
+                          Icons.person,
+                          color: Colors.white,
+                          size: 30,
+                        ),
+                      ),
+                      title: Text(
+                        'Username',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 20.0),
+                      ),
+                      subtitle: Text(
+                        'Informações de usuário',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 16.0),
+                      ),
+                    ),
                   ),
-                ),
-                title: Text(
-                  'Username',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 20.0),
-                ),
-                subtitle: Text(
-                  'User infos',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 16.0),
-                ),
-              ),
-            ),
-          ],
+                ],
+              );
+            }
+          }
         ),
       ),
     );
