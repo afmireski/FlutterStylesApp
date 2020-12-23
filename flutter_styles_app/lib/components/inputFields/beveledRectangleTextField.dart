@@ -17,6 +17,9 @@ class BeveledRectangleTextField extends StatelessWidget {
   final Function onSubmitted;
   final Function(String) onChanged;
   final List<TextInputFormatter> masks;
+  final Widget prefixIcon;
+  final Widget suffixIcon;
+  final bool isObscure;
 
   const BeveledRectangleTextField({Key key,
     @required this.label,
@@ -30,7 +33,8 @@ class BeveledRectangleTextField extends StatelessWidget {
     this.keyboardType = TextInputType.text,
     this.inputAction = TextInputAction.done,
     this.onSubmitted,
-    this.onChanged, this.masks}) : super(key: key);
+    this.onChanged, this.masks, this.prefixIcon, this.suffixIcon,
+    this.isObscure = false}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -61,12 +65,15 @@ class BeveledRectangleTextField extends StatelessWidget {
         textInputAction: inputAction,
         onSubmitted: onSubmitted,
         onChanged: onChanged,
+        obscureText: isObscure,
         decoration: InputDecoration(
           errorText: errorText,
           errorStyle: errorStyle,
           hintText: label,
           hintStyle: fieldStyle,
           border: InputBorder.none,
+          prefixIcon: prefixIcon,
+          suffixIcon: suffixIcon,
           ),
         inputFormatters: masks,
         ),
