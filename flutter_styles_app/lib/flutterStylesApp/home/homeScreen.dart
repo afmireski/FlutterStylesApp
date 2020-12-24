@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_styles_app/components/size/mediaQueryConfig.dart';
 import 'package:flutter_styles_app/components/waveHeader.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -11,10 +12,11 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    MediaQueryConfig mediaConfig = MediaQueryConfig(context);
     return Scaffold(
       body: Container(
         child: FutureBuilder(
-          future: Future.delayed(Duration(seconds: 5)),
+          future: Future.delayed(Duration(seconds: 3)),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               return Center(child: CircularProgressIndicator(),);
@@ -22,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
               return Column(
                 children: [
                   WaveHeader(
-                    height: 160,
+                    height: mediaConfig.returnHeight(percent: 0.2257),
                     mainColor: Theme.of(context).primaryColorDark,
                     secondaryColor: Theme.of(context).accentColor,
                     child: ListTile(
@@ -36,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       title: Text(
-                        'Username',
+                        'Usuário',
                         style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w500,

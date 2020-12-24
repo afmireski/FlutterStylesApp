@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_styles_app/components/clippers/logClipper.dart';
 import 'package:flutter_styles_app/components/inputFields/beveledRectangleTextField.dart';
+import 'package:flutter_styles_app/components/size/mediaQueryConfig.dart';
 import 'package:flutter_styles_app/flutterStylesApp/auth/controllers/loginController.dart';
 import 'package:flutter_styles_app/flutterStylesApp/home.dart';
 
@@ -12,6 +13,7 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MediaQueryConfig mediaConfig = MediaQueryConfig(context);
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -22,12 +24,12 @@ class Login extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(20.0),
                 child: FlutterLogo(
-                  size: 150.0,
+                  size: mediaConfig.returnHeight(percent: 0.2116),
                 ),
               ),
               SizedBox(height: 20.0,),
               Container(
-                height: 400,
+                height: mediaConfig.returnHeight(percent: 0.5644),
                 child: Stack(
                   children: [
                     Container(
@@ -37,7 +39,7 @@ class Login extends StatelessWidget {
                         child: Container(
                           padding: EdgeInsets.fromLTRB(10.0, 75.0, 10.0, 50),
                           color: Colors.white,
-                          height: 380,
+                          height: mediaConfig.returnHeight(percent: 0.5362),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
@@ -146,7 +148,7 @@ class Login extends StatelessWidget {
                       ),
                     ),
                     Positioned(
-                      right: 16,
+                      right: mediaConfig.returnWidth(percent: 0.0445),
                       top: 0,
                       child: CircleAvatar(
                         radius: 40.0,
@@ -155,7 +157,7 @@ class Login extends StatelessWidget {
                       ),
                     ),
                     Positioned(
-                      left: 20,
+                      left: mediaConfig.returnWidth(percent: 0.0556),
                         bottom: 0,
                         child: Observer(
                           builder: (context) {
@@ -178,7 +180,25 @@ class Login extends StatelessWidget {
                     )
                   ],
                 ),
-              )
+              ),
+              SizedBox(height: 30.0,),
+              Container(
+                child: Center(
+                  child: TextButton.icon(
+                    onPressed: () {
+                    },
+                    icon: Icon(Icons.assignment_ind_sharp, color: Theme.of(context).primaryColor, size: 30.0,),
+                    label: Text(
+                      'Cadastrar-se',
+                      style: TextStyle(
+                        color: Theme.of(context).primaryColor,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
