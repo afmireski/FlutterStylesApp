@@ -21,7 +21,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              Color( 0xfffd8868 ),
+              Color( 0xfffeb09a ),
               Color( 0xfffd6135 ),
             ]
           )
@@ -49,6 +49,12 @@ class _CustomDrawerState extends State<CustomDrawer> {
                     controller: widget.pageController,
                     label: 'Form',
                     page: 1
+                  ),
+                  DrawerTile(
+                      icon: Icons.settings,
+                      controller: widget.pageController,
+                      label: 'Form',
+                      page: 2
                   ),
                 ],
               ),

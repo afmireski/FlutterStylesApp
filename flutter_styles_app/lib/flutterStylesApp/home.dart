@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_styles_app/flutterStylesApp/form/firstFormScreen.dart';
 import 'package:flutter_styles_app/flutterStylesApp/home/homeScreen.dart';
 import 'package:flutter_styles_app/flutterStylesApp/navigationDrawer/customDrawer.dart';
+import 'package:flutter_styles_app/flutterStylesApp/settings/settingsScreen.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -46,6 +47,16 @@ class _HomeState extends State<Home> {
             ),
             drawer: CustomDrawer(pageController: _pageController,),
             body: FirstFormScreen(),
+          ),
+          ///FORM
+          Scaffold(
+            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+            appBar: AppBar(
+              title: Text('Settings'),
+              centerTitle: true,
+            ),
+            drawer: CustomDrawer(pageController: _pageController,),
+            body: SettingsScreen(),
           ),
 
         ],
