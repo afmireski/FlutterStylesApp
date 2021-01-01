@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_styles_app/components/size/mediaQueryConfig.dart';
-import 'package:flutter_styles_app/components/waveHeader.dart';
+import 'file:///C:/Users/AFMireski/Documents/GitHub/FlutterStylesApp/FlutterSlytesApp/flutter_styles_app/lib/components/widgets/waveHeader.dart';
 
 class HomeScreen extends StatefulWidget {
 

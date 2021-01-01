@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_styles_app/flutterStylesApp/auth/login.dart';
+import 'package:flutter_styles_app/flutterStylesApp/settings/alterarUsuarioSenha/alterarUsuarioDialog.dart';
+import 'package:flutter_styles_app/flutterStylesApp/settings/alterarUsuarioSenha/confirmeSenhaDialog.dart';
 
 class SettingsScreen extends StatelessWidget {
   @override
@@ -60,7 +62,12 @@ class SettingsScreen extends StatelessWidget {
                     shape: BeveledRectangleBorder(
                         borderRadius: BorderRadius.vertical(
                             bottom: Radius.circular(15.0))),
-                    onTap: () {},
+                    onTap: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) => ConfirmeSenhaDialog(),
+                      );
+                    },
                   )
                 ],
               ).toList(),

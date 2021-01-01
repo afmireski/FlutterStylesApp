@@ -16,7 +16,7 @@ class FirstFormScreen extends StatelessWidget {
 
   final cpfMask = MaskTextInputFormatter(mask: '###.###.###-##');
 
-  TextEditingController dateController = TextEditingController();
+  final TextEditingController dateController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
