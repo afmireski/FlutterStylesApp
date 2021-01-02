@@ -53,7 +53,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                   DrawerTile(
                       icon: Icons.settings,
                       controller: widget.pageController,
-                      label: 'Form',
+                      label: 'Settings',
                       page: 2
                   ),
                 ],
