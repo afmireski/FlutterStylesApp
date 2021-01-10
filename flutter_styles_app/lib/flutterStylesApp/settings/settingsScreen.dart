@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_styles_app/flutterStylesApp/auth/login.dart';
 import 'package:flutter_styles_app/flutterStylesApp/settings/alterarUsuarioSenha/alterarUsuarioDialog.dart';
 import 'package:flutter_styles_app/flutterStylesApp/settings/alterarUsuarioSenha/confirmeSenhaDialog.dart';
+import 'package:flutter_styles_app/flutterStylesApp/settings/perfil/perfilScreen.dart';
 
 class SettingsScreen extends StatelessWidget {
   @override
@@ -44,7 +45,9 @@ class SettingsScreen extends StatelessWidget {
                     shape: BeveledRectangleBorder(
                         borderRadius:
                             BorderRadius.vertical(top: Radius.circular(15.0))),
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => PerfilScreen(),));
+                    },
                   ),
                   ListTile(
                     leading: Icon(

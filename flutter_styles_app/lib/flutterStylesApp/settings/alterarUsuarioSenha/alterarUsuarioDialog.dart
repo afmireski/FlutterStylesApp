@@ -37,7 +37,7 @@ class AlterarUsuarioDialog extends StatelessWidget {
                       offset: Offset(4.0, 2.0),
                       blurRadius: 2.0)
                 ],
-                keyboardType: TextInputType.name,
+                keyboardType: TextInputType.emailAddress,
                 inputAction: TextInputAction.next,
               ),
               SizedBox(height: 10.0,),
