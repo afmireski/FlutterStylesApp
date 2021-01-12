@@ -13,6 +13,7 @@ class BeveleadRectangleDropdown extends StatelessWidget {
   final TextStyle fieldStyle;
   final Map items;
   final Function onChanged;
+  final Icon prefixIcon;
 
   const BeveleadRectangleDropdown({Key key,
     this.label,
@@ -26,7 +27,7 @@ class BeveleadRectangleDropdown extends StatelessWidget {
     this.fieldStyle,
     @required this.items,
     @required this.value,
-    @required this.onChanged}) : super(key: key);
+    @required this.onChanged, this.prefixIcon}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +68,8 @@ class BeveleadRectangleDropdown extends StatelessWidget {
         decoration: InputDecoration(
           border: InputBorder.none,
           errorText: errorText,
-          errorStyle: errorStyle
+          errorStyle: errorStyle,
+          prefixIcon: prefixIcon
         ),
       ),
     );

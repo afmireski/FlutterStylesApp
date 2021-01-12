@@ -20,6 +20,7 @@ class BeveledRectangleTextField extends StatelessWidget {
   final Widget prefixIcon;
   final Widget suffixIcon;
   final bool isObscure;
+  final int maxLines;
 
   const BeveledRectangleTextField({Key key,
     @required this.label,
@@ -34,7 +35,7 @@ class BeveledRectangleTextField extends StatelessWidget {
     this.inputAction = TextInputAction.done,
     this.onSubmitted,
     this.onChanged, this.masks, this.prefixIcon, this.suffixIcon,
-    this.isObscure = false}) : super(key: key);
+    this.isObscure = false, this.maxLines}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -76,6 +77,7 @@ class BeveledRectangleTextField extends StatelessWidget {
           suffixIcon: suffixIcon,
           ),
         inputFormatters: masks,
+        maxLines: maxLines,
         ),
     );
   }

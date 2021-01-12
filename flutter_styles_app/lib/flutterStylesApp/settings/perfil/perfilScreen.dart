@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_styles_app/components/widgets/infoCard.dart';
+import 'package:flutter_styles_app/flutterStylesApp/settings/perfil/editar/editarPerfilScreen.dart';
 
 class PerfilScreen extends StatelessWidget {
   @override
@@ -324,7 +325,10 @@ class PerfilScreen extends StatelessWidget {
                                         tooltip: "Editar perfil",
                                         icon: Icon(Icons.edit_sharp, color: Colors.white,),
                                         onPressed: () {
-
+                                          Navigator.of(context).push(
+                                            MaterialPageRoute(builder: (context) => EditarPerfilScreen()
+                                              ,)
+                                          );
                                         },
                                       ),
                                     ),
