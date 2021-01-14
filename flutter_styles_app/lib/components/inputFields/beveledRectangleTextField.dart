@@ -77,7 +77,7 @@ class BeveledRectangleTextField extends StatelessWidget {
           suffixIcon: suffixIcon,
           ),
         inputFormatters: masks,
-        maxLines: maxLines,
+        maxLines: isObscure ? 1 : maxLines,
         ),
     );
   }

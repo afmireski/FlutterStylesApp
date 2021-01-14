@@ -12,6 +12,7 @@ class BeveledRectangleDatePicker extends StatelessWidget {
   final Function onShowPicker;
   final controller;
   final FocusNode focus;
+  final Icon prefixIcon;
 
   const BeveledRectangleDatePicker({Key key,
     @required this.label, this.fieldStyle,
@@ -19,7 +20,8 @@ class BeveledRectangleDatePicker extends StatelessWidget {
     this.fieldColor = Colors.white,
     this.borderColor = Colors.black,
     this.shadows,
-    @required this.onShowPicker, this.controller, this.focus}) : super(key: key);
+    @required this.onShowPicker, this.controller,
+    this.focus, this.prefixIcon}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +52,7 @@ class BeveledRectangleDatePicker extends StatelessWidget {
           style: fieldStyle,
           enabled: false,
             decoration: InputDecoration(
-              prefixIcon: Icon(
+              prefixIcon: prefixIcon ?? Icon(
                 Icons.date_range_sharp,
                 color: borderColor,
               ),

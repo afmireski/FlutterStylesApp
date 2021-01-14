@@ -56,6 +56,7 @@ class CustomDialog extends StatelessWidget {
                     child: Text(
                       title,
                       style: titleStyle ?? TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0, color: Colors.black),
+                      textAlign: TextAlign.center,
                     ),
                   ),
                   child != null ? Divider(indent: 10.0, endIndent: 10.0, height: 10.0,): Container(),
