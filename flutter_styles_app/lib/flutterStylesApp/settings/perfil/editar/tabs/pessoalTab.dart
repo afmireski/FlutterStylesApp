@@ -195,7 +195,7 @@ class PessoalTab extends StatelessWidget {
                   ),
                   Align(
                       alignment: Alignment.center,
-                      child: RaisedButton(
+                      child: ElevatedButton(
                         child: Text(
                           "Salvar",
                           style: TextStyle(
@@ -203,15 +203,18 @@ class PessoalTab extends StatelessWidget {
                               fontWeight: FontWeight.w500,
                               fontSize: 18.0),
                         ),
-                        padding: EdgeInsets.all(8.0),
-                        splashColor: Theme.of(context).primaryColorLight,
-                        disabledElevation: 0.0,
-                        elevation: 5.0,
-                        shape: BeveledRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                            side: BorderSide(
-                                color: Theme.of(context).primaryColorDark,
-                                width: 2.0)),
+                        style: ButtonStyle(
+                            padding: MaterialStateProperty.resolveWith<EdgeInsets>((states) => EdgeInsets.all(8.0)),
+                            overlayColor: MaterialStateProperty.resolveWith<Color>((states) => Theme.of(context).primaryColorLight),
+                            elevation: MaterialStateProperty.resolveWith<double>((states) => 5.0),
+                            shape: MaterialStateProperty.resolveWith((states) => BeveledRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                                side: BorderSide(
+                                    color: Theme.of(context).primaryColorDark,
+                                    width: 2.0
+                                )
+                            ))
+                        ),
                         onPressed: () {
                           if (_pessoalController.isValid) {
                             showDialog(

@@ -195,7 +195,7 @@ class FirstFormScreen extends StatelessWidget {
                         alignment: Alignment.center,
                         child: Observer(
                           builder: (context) {
-                            return RaisedButton.icon(
+                            return ElevatedButton.icon(
                               onPressed:
                               formController.firstFormIsValid ? () {
                                 Navigator.of(context).push(
@@ -204,12 +204,15 @@ class FirstFormScreen extends StatelessWidget {
                                     ),
                                 );
                               } : null,
-                              shape: BeveledRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  side: BorderSide(
-                                      color: Theme.of(context).primaryColorDark,
-                                      style: BorderStyle.solid,
-                                      width: 1.5)),
+
+                              style: ButtonStyle(
+                                  shape: MaterialStateProperty.resolveWith((states) => BeveledRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10.0),
+                                      side: BorderSide(
+                                          color: Theme.of(context).primaryColorDark,
+                                          style: BorderStyle.solid,
+                                          width: 1.5)))
+                              ),
                               icon: Icon(
                                 Icons.navigate_next_sharp,
                                 color: Colors.white,

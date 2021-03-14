@@ -171,7 +171,7 @@ class SecondFormScreen extends StatelessWidget {
                           alignment: Alignment.center,
                           child: Observer(
                             builder: (context) {
-                              return RaisedButton.icon(
+                              return ElevatedButton.icon(
                                 onPressed:
                                 formController.secondFormIsValid ? () {
                                   if (formController.isValid) {
@@ -208,7 +208,7 @@ class SecondFormScreen extends StatelessWidget {
                                                       ),
                                                     ),
                                                     SizedBox(height: 20.0,),
-                                                    FlatButton.icon(
+                                                    TextButton.icon(
                                                       onPressed: () {
                                                         Navigator.of(context).pushReplacement(
                                                           MaterialPageRoute(builder: (context) => Home(),),
@@ -266,14 +266,14 @@ class SecondFormScreen extends StatelessWidget {
                                                       ),
                                                     ),
                                                     SizedBox(height: 20.0,),
-                                                    FlatButton.icon(
+                                                    TextButton.icon(
                                                       onPressed: () {
                                                         Navigator.of(context).pushReplacement(
                                                           MaterialPageRoute(builder: (context) => Home(),),
                                                         );
                                                       },
                                                       icon: Icon(Icons.backspace_rounded, color: Colors.black,),
-                                                      label: Text('Entendi!'),
+                                                      label: Text('Entendi!', style: TextStyle(color: Colors.black),),
                                                     ),
                                                   ],
                                                 ),
@@ -286,12 +286,14 @@ class SecondFormScreen extends StatelessWidget {
                                   }
 
                                 } : null,
-                                shape: BeveledRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10.0),
-                                    side: BorderSide(
-                                        color: Theme.of(context).primaryColorDark,
-                                        style: BorderStyle.solid,
-                                        width: 1.5)),
+                                style: ButtonStyle(
+                                  shape: MaterialStateProperty.resolveWith((states) => BeveledRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10.0),
+                                      side: BorderSide(
+                                          color: Theme.of(context).primaryColorDark,
+                                          style: BorderStyle.solid,
+                                          width: 1.5)))
+                                ),
                                 icon: Icon(
                                   Icons.save_sharp,
                                   color: Colors.white,

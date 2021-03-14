@@ -27,14 +27,14 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.0
+  cupertino_icons: ^1.0.2
 
   #MOB X
   mobx: ^1.2.1+4
   flutter_mobx: ^1.1.0+2
 
   #INPUT
-  mask_text_input_formatter: ^1.1.0
+  mask_text_input_formatter: ^1.2.1
 
   #DATE
   date_format: ^1.0.9

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_styles_app/flutterStylesApp/auth/login.dart';
 import 'package:flutter_styles_app/functions/appRotationController.dart';
@@ -46,9 +48,11 @@ class MyApp extends StatelessWidget {
         buttonColor: Color( 0xffe0e0e0 ),
         toggleableActiveColor: Color( 0xffca2e02 ),
         secondaryHeaderColor: Color( 0xffffebe6 ),
-        textSelectionColor: Color( 0xfffeb09a ),
-        cursorColor: Color( 0xff4285f4 ),
-        textSelectionHandleColor: Color( 0xfffd8868 ),
+        textSelectionTheme: TextSelectionThemeData(
+          selectionColor: Color( 0xfffeb09a ),
+          cursorColor: Color( 0xff4285f4 ),
+          selectionHandleColor: Color( 0xfffd8868 ),
+        ),
         backgroundColor: Color( 0xfffeb09a ),
         dialogBackgroundColor: Color( 0xffffffff ),
         indicatorColor: Color( 0xfffc3903 ),

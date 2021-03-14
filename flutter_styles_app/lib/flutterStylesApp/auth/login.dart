@@ -161,19 +161,21 @@ class Login extends StatelessWidget {
                         bottom: 0,
                         child: Observer(
                           builder: (context) {
-                            return RaisedButton.icon(
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40.0)),
+                            return ElevatedButton.icon(
                               onPressed: loginController.isValid ? () {
                                 Navigator.of(context).pushReplacement(
                                     MaterialPageRoute(
                                       builder: (context) => Home(),));
                               } : null,
                               icon: Icon(Icons.login, color: Colors.white, size: 30,),
+                              style: ButtonStyle(
+                                shape: MaterialStateProperty.resolveWith((states) => RoundedRectangleBorder(borderRadius: BorderRadius.circular(40.0)))
+                              ),
                               label: Text(
                                 'Login',
                                 style: TextStyle(color: Colors.white, fontSize: 18.0),
                               ),
-                              disabledColor: Colors.grey,
+
                             );
                           }
                         )

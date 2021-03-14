@@ -1,7 +1,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_styles_app/flutterStylesApp/auth/login.dart';
-import 'package:flutter_styles_app/flutterStylesApp/settings/alterarUsuarioSenha/alterarUsuarioDialog.dart';
 import 'package:flutter_styles_app/flutterStylesApp/settings/alterarUsuarioSenha/confirmeSenhaDialog.dart';
 import 'package:flutter_styles_app/flutterStylesApp/settings/perfil/perfilScreen.dart';
 

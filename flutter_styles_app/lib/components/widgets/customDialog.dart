@@ -62,7 +62,7 @@ class CustomDialog extends StatelessWidget {
                   child != null ? Divider(indent: 10.0, endIndent: 10.0, height: 10.0,): Container(),
                   child ?? Container(),
                   SizedBox(height: 20.0,),
-                  FlatButton(
+                  TextButton(
                     onPressed: onPressed,
                     child: Text(buttonLabel, style: labelStyle,),
                   ),
