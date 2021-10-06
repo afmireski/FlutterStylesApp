@@ -2,6 +2,12 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_styles_app/flutterStylesApp/auth/login.dart';
+import 'package:flutter_styles_app/flutterStylesApp/form/firstFormScreen.dart';
+import 'package:flutter_styles_app/flutterStylesApp/form/secondFormScreen.dart';
+import 'package:flutter_styles_app/flutterStylesApp/home.dart';
+import 'package:flutter_styles_app/flutterStylesApp/settings/perfil/editar/editarPerfilScreen.dart';
+import 'package:flutter_styles_app/flutterStylesApp/settings/perfil/perfilScreen.dart';
+import 'package:flutter_styles_app/flutterStylesApp/settings/settingsScreen.dart';
 import 'package:flutter_styles_app/functions/appRotationController.dart';
 
 void main() {
@@ -14,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     portraitModeOnly();
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter Styles APP',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: MaterialColor(4294719747,{50: Color( 0xffffebe6 )
