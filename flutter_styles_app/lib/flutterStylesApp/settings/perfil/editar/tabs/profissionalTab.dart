@@ -3,6 +3,7 @@ import 'package:flutter_styles_app/components/inputFields/beveledRectangleTextFi
 import 'package:flutter_styles_app/components/size/mediaQueryConfig.dart';
 import 'package:flutter_styles_app/components/widgets/customDialog.dart';
 import 'package:flutter_styles_app/components/widgets/infoCard.dart';
+import 'package:flutter_styles_app/components/widgets/infoCardWeb.dart';
 import 'package:flutter_styles_app/flutterStylesApp/settings/perfil/editar/tabs/controllers/profissionalController.dart';
 
 class ProfissionalTab extends StatelessWidget {
@@ -227,8 +228,7 @@ class ProfissionalTab extends StatelessWidget {
                   return Center(
                     child: Container(
                       width: 600,
-                      child: InfoCard(
-                        height: mediaConfig.returnHeight(percent: 0.61382) <= 700 ? mediaConfig.returnHeight(percent: 0.61382) : 500,
+                      child: InfoCardWeb(
                         icon: Icons.edit_outlined,
                         iconColor: Colors.white,
                         backgroundIconColor: Theme.of(context).primaryColor,

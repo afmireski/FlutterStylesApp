@@ -7,6 +7,7 @@ import 'package:flutter_styles_app/components/inputFields/beveledRectangleTextFi
 import 'package:flutter_styles_app/components/size/mediaQueryConfig.dart';
 import 'package:flutter_styles_app/components/widgets/customDialog.dart';
 import 'package:flutter_styles_app/components/widgets/infoCard.dart';
+import 'package:flutter_styles_app/components/widgets/infoCardWeb.dart';
 import 'package:flutter_styles_app/flutterStylesApp/settings/perfil/editar/tabs/controllers/pessoalController.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
@@ -267,8 +268,7 @@ class PessoalTab extends StatelessWidget {
                   Center(
                     child: Container(
                       width: 600,
-                      child: InfoCard(
-                        height: mediaConfig.returnHeight(percent: 0.70555) <= 700 ? mediaConfig.returnHeight(percent: 0.70555) : 500,
+                      child: InfoCardWeb(
                         icon: Icons.edit_sharp,
                         iconColor: Colors.white,
                         backgroundIconColor: Theme.of(context).primaryColor,
